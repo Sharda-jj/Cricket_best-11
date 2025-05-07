@@ -1,109 +1,170 @@
-#Best Playing 11 Men Cricket Data Analytics
-Table of Contents :
-Problem Statement
-Data Collection
-Data Transformation
-Data Modelling
-Data Analysis Expression (DAX)
-Report
-Tools, Software and Libraries
-References
-Problem Statement :
-In This project Created a Power BI Dashboard which helps to review and compare performances of all the players in T20 Men's Cricket World Cup 2022 tournament. This dashboard also enables us to select the best 11 of the tournament based on their performance based on defined selection criteria which is included as a part of problem statement.
+# 🏏 Best Playing 11 - Men’s Cricket Data Analytics
 
-Datasource :
-Scrapped all the data regarding match and world cup from www.espncricinfo.com and all details of player career performace and collect data on brightdata
+A Power BI Dashboard project to analyze and select the top 11 players from the **T20 Men’s Cricket World Cup 2022**, using scraped data and performance metrics.
 
-Data Collection:
-Scrapped all the data regarding match and world cup and all details about players career from brightdata using Beautiful Soup library and Jupyter Notebook is used to convert the json files into the dataframes and then these dataframes into csv file for further data analysis on power bi.
-<img width="611" alt="image" src="https://github.com/user-attachments/assets/b06f857b-4ef3-45ae-b6ca-507029cb2726" />
-<img width="329" alt="image" src="https://github.com/user-attachments/assets/cb14ad33-c197-439e-aeef-bebe3696cbce" />
-Data Transformation:
-Performed initial data cleaning after scrapping such as duplicates, player name correction, handle missing value, match id linking etc. using Pandas and json. Transformed the final data for dashboard using Power Query of Power BI.
+---
 
-Data Modelling:
-Connected all the datasets with based on some defined primary keys such as team and match ids. Also, created many measures, calculated columns and parameters for data analysis and dash boarding using DAX.
-<img width="632" alt="image" src="https://github.com/user-attachments/assets/cda35b48-b9f2-42ef-8282-50e9c4b90b7e" />
-Data Analysis Expression (DAX)
-Measures used in visualization are:
+## 📚 Table of Contents
 
+- [🎯 Problem Statement](#-problem-statement)
+- [🌐 Data Collection](#-data-collection)
+- [🔄 Data Transformation](#-data-transformation)
+- [🧩 Data Modelling](#-data-modelling)
+- [🧮 Data Analysis Expressions (DAX)](#-data-analysis-expressions-dax)
+- [📊 Reports & Visualizations](#-reports--visualizations)
+- [🛠 Tools and Libraries Used](#-tools-and-libraries-used)
+- [🔗 References](#-references)
+
+---
+
+## 🎯 Problem Statement
+
+This project aims to review and compare performances of all players in the **T20 Men’s Cricket World Cup 2022** via an interactive Power BI dashboard.
+
+The dashboard also allows selection of the **Best Playing 11** players based on well-defined performance metrics (batting, bowling, fielding, etc.).
+
+---
+
+## 🌐 Data Collection
+
+- Scraped match and player career data from [ESPN Cricinfo](https://www.espncricinfo.com) using **Bright Data**.
+- Used **BeautifulSoup** in **Python** to collect structured JSON data.
+- Data was transformed into **pandas DataFrames** and saved as CSVs for further use in Power BI.
+
+### 📷 Screenshots
+
+![Data Collection](https://github.com/user-attachments/assets/b06f857b-4ef3-45ae-b6ca-507029cb2726)
+![Data Collector](https://github.com/user-attachments/assets/cb14ad33-c197-439e-aeef-bebe3696cbce)
+
+---
+
+## 🔄 Data Transformation
+
+Initial cleaning and transformation included:
+
+- Handling missing values
+- Correcting inconsistent player names
+- Removing duplicates
+- Merging match/player data on `matchID`, `playerID`, etc.
+
+Used:
+- **pandas/json** in Python
+- **Power Query** inside Power BI
+
+---
+
+## 🧩 Data Modelling
+
+- Connected datasets using match IDs, player IDs, and team IDs.
+- Created relationships between batting, bowling, and player info tables.
+- Built calculated columns and measures using DAX for dynamic filtering and KPI visualization.
+
+### 📷 Data Model Screenshot
+
+![Data Model](https://github.com/user-attachments/assets/cda35b48-b9f2-42ef-8282-50e9c4b90b7e)
+
+---
+
+## 🧮 Data Analysis Expressions (DAX)
+
+### 🔹 Batting Metrics
+
+```DAX
 Total Runs = SUM(t20_batting_summary[runs])
-
-Total Innings Batted =COUNT(t20_batting_summary[matchID])
-
+Total Innings Batted = COUNT(t20_batting_summary[matchID])
 Total Innings Dismissed = SUM(t20_batting_summary[Out])
-
 Batting Avg = DIVIDE([Total Runs],[Total Innings Dismissed],0)
-
-Total balls faced =SUM(t20_batting_summary[balls])
-
-Strike rate = DIVIDE([Total Runs],[total balls faced],0)*100
-
-Batting Possition = ROUNDUP(AVERAGE(t20_batting_summary[battingPos]),0)
-
-Boundary % = DIVIDE(SUM(t20_batting_summary[Boundary runs]),[Total Runs],0)*100
-
-Avg. balls faced =  AVERAGE(t20_batting_summary[balls])
-
-wickets = SUM(t20_bowling_summary[wickets])
-
+Total Balls Faced = SUM(t20_batting_summary[balls])
+Strike Rate = DIVIDE([Total Runs],[Total Balls Faced],0) * 100
+Boundary % = DIVIDE(SUM(t20_batting_summary[Boundary runs]), [Total Runs], 0) * 100
+Avg. Balls Faced = AVERAGE(t20_batting_summary[balls])
+Batting Position = ROUNDUP(AVERAGE(t20_batting_summary[battingPos]), 0)
+Fours = SUM(t20_batting_summary[fours])
+Sixes = SUM(t20_batting_summary[sixes])
+Boundary Runs (Batting) = t20_batting_summary[fours]*4 + t20_batting_summary[sixes]*6
+🔹 Bowling Metrics
+Wickets = SUM(t20_bowling_summary[wickets])
 Balls Bowled = SUM(t20_bowling_summary[balls])
-
-Runs Conced = SUM(t20_bowling_summary[runs])
-
-Economy = DIVIDE([Runs Conced],([Balls Bowled]/6),0)
-
-Bowling Strike Rate =DIVIDE([Balls Bowled],[wickets],0)
-
-Bowling Avrage = DIVIDE([Runs Conced],[wickets],0)
-
+Runs Conceded = SUM(t20_bowling_summary[runs])
+Economy = DIVIDE([Runs Conceded], ([Balls Bowled]/6), 0)
+Bowling Strike Rate = DIVIDE([Balls Bowled], [Wickets], 0)
+Bowling Average = DIVIDE([Runs Conceded], [Wickets], 0)
 Total Innings Bowled = DISTINCTCOUNT(t20_bowling_summary[matchID])
+Dot Ball % = DIVIDE(SUM(t20_bowling_summary[zeros]), SUM(t20_bowling_summary[balls]), 0)
+Fours Conceded = SUM(t20_bowling_summary[fours])
+Sixes Conceded = SUM(t20_bowling_summary[sixes])
+Boundary Runs (Bowling) = t20_bowling_summary[fours]*4 + t20_bowling_summary[sixes]*6
+🔹 Dynamic Selection & UX
+Player Selection = IF(ISFILTERED(t20_players_info[name]), "1", "0")
+Display Text = IF([Player Selection] = "1", " ", "Select Player(s) by clicking the player's name to see their individual or combined strength")
+Color Callout Value = IF([Player Selection] = "0", "#E8D166", "#1D1D2E")
+📊 Reports & Visualizations
+Built using Microsoft Power BI Desktop, the dashboard includes:
 
-Dot Ball % = DIVIDE(SUM(t20_bowling_summary[zeros]),SUM(t20_bowling_summary[balls]),0)
+Player Role-Based Pages:
 
-Player selection = if(ISFILTERED(t20_players_info[name]),"1","0")
+Openers
 
-Display Text = if([Player selection] = "1"," ","Select Player(s) by clicking the player's name to see their invidual or combined strength")
+Middle Order
 
-Color Callout Value =if([Player selection]="0","#E8D166","#1D1D2E")
+Finishers
 
-boundary runs batting =t20_batting_summary[fours]*4 + t20_batting_summary[sixes]*6
+All-Rounders
 
-boundary runs bowling =t20_bowling_summary[fours]*4+t20_bowling_summary[sixes]*6
+Specialist Fast Bowlers
 
-Reports:
-Data visualization for the dataset was done using Microsoft Power BI Desktop:
+Final Best 11 Team
 
-Player Analysis
-<img width="608" alt="image" src="https://github.com/user-attachments/assets/b4be216a-9100-4b59-9210-9cd82fca00b5" />
-<img width="619" alt="image" src="https://github.com/user-attachments/assets/03a6fdee-6cf4-440e-a36c-e58f293508db" />
-<img width="623" alt="image" src="https://github.com/user-attachments/assets/ab9cf48e-ff51-4c9c-b163-69ada07243e9" />
-<img width="623" alt="image" src="https://github.com/user-attachments/assets/440ae319-c617-4492-a2ad-771a31440741" />
-<img width="622" alt="image" src="https://github.com/user-attachments/assets/bd2b4e7c-dc8b-44b6-b252-aaaf3a332c29" />
-<img width="623" alt="image" src="https://github.com/user-attachments/assets/b06bfdc2-9fcc-4354-bf2b-71d9bfde5ab8" />
-Tools, Software and Libraries :
-1.Jupyter Notebook
+Features:
 
-2.Python
+Filterable visuals
 
-3.Pandas/Json
+KPI cards and role-wise insights
 
-4.Webscraping
+Comparative analysis and boundary contribution
 
-5.Power Query Editor
+Final player selection logic built into UX
 
-6.Power BI
+📷 Report Screenshots
+🔸 Player Analysis
 
-7.JavaScript
 
-References
-https://codebasics.io/courses
+🔸 Openers
 
-https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?id=14450;type=tournament
 
-https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2022-23-1298134/namibia-vs-sri-lanka-1st-match-first-round-group-a-1298135/full-scorecard
+🔸 Middle Order
 
-https://brightdata.com/cp/data_collector/collectors/c_lefxe7xf2rj3m5b1b3/code?draft_id=lefxeciy8d6v38d3d
+
+🔸 Finishers
+
+
+🔸 All Rounders
+
+
+🔸 Final Best 11
+
+
+🛠 Tools and Libraries Used
+Tool / Library	Purpose
+Jupyter Notebook	Code execution and scripting
+Python	Data scraping and transformation
+pandas, json	Data manipulation
+BeautifulSoup	Web scraping
+Bright Data	Data collector tool
+Power Query Editor	ETL inside Power BI
+Power BI Desktop	Dashboard creation and DAX calculations
+JavaScript (Bright Data)	For customizing collector logic
+
+🔗 References
+📘 Codebasics Power BI Course
+
+📊 ESPN Cricinfo Tournament Stats
+
+🏏 Match Scorecard – Namibia vs Sri Lanka
+
+🧰 Bright Data Collector
+
+
 
 
 
