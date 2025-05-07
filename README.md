@@ -128,12 +128,12 @@ Final player selection logic built into UX
 📷 Report Screenshots
 
 🔸 Openers
-![image](https://github.com/user-attachments/assets/2480b4f0-0c38-4c6d-b545-b3eb190a0f89)
+![image](https://github.com/user-attachments/assets/42b27629-46e7-443b-89f2-cb23212caac1)
+
 
 
 
 🔸 Middle Order
-![image](https://github.com/user-attachments/assets/af3e3463-a8e6-4d73-a72a-46fd335e4038)
 
 
 
