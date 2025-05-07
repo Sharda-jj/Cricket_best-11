@@ -125,31 +125,22 @@ Comparative analysis and boundary contribution
 
 Final player selection logic built into UX
 
-📷 Report Screenshots
+## 📷 Report Screenshots
 
-🔸 Openers
-<img width="626" alt="image" src="https://github.com/user-attachments/assets/dd2d7624-1583-4872-b6e9-15a8824cbd5a" />
+### 🔸 Openers
+![Openers](./openers.png)
 
+### 🔸 Middle Order
+![Middle Order](./middle%20order.png)
 
+### 🔸 Finisher
+![Finisher](./finisher.png)
 
+### 🔸 All Rounders
+![All Rounders](./all%20rounder.png)
 
-
-🔸 Middle Order
-<img width="632" alt="image" src="https://github.com/user-attachments/assets/5643a4cf-77dc-4b28-b1bf-729051ec9557" />
-
-
-
-🔸 Finishers
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/df55da0d-c868-4559-86cf-d712bbe52020" />
-
-
-🔸 All Rounders
-<img width="622" alt="image" src="https://github.com/user-attachments/assets/49345e32-ffd2-4d6d-bdd0-a073a0e610e0" />
-
-
-
-🔸 Final Best 11
-<img width="632" alt="image" src="https://github.com/user-attachments/assets/775720f0-925d-4b6d-9954-20574fffec8d" />
+### 🔸 Final Best 11
+![Final Best 11](./final%20best%2011%20players.png)
 
 
 🛠 Tools and Libraries Used
