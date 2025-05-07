@@ -141,7 +141,7 @@ Final player selection logic built into UX
 ![All Rounders](./all%20rounder.png)
 
 ### 🔸 Final Best 11
-![Final Best 11](./final%20best%2011%20players.png)
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/21a68031-b8de-4fb8-b79a-dd67ad74cf3e" />
 
 
 🛠 Tools and Libraries Used
