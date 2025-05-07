@@ -126,22 +126,29 @@ Comparative analysis and boundary contribution
 Final player selection logic built into UX
 
 📷 Report Screenshots
-🔸 Player Analysis
-
 
 🔸 Openers
+![image](https://github.com/user-attachments/assets/2480b4f0-0c38-4c6d-b545-b3eb190a0f89)
+
 
 
 🔸 Middle Order
+![image](https://github.com/user-attachments/assets/af3e3463-a8e6-4d73-a72a-46fd335e4038)
+
 
 
 🔸 Finishers
+![image](https://github.com/user-attachments/assets/391303b4-c372-4457-92f4-5e82b6e2527e)
+
 
 
 🔸 All Rounders
+![image](https://github.com/user-attachments/assets/6e4423f2-bb45-479c-9592-57cf40b589a7)
+
 
 
 🔸 Final Best 11
+![image](https://github.com/user-attachments/assets/1aa1fce7-8e90-489c-96e2-de55b092f607)
 
 
 🛠 Tools and Libraries Used
