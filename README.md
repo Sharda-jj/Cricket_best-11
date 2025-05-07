@@ -128,27 +128,28 @@ Final player selection logic built into UX
 📷 Report Screenshots
 
 🔸 Openers
-![image](https://github.com/user-attachments/assets/42b27629-46e7-443b-89f2-cb23212caac1)
+<img width="626" alt="image" src="https://github.com/user-attachments/assets/dd2d7624-1583-4872-b6e9-15a8824cbd5a" />
+
 
 
 
 
 🔸 Middle Order
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/5643a4cf-77dc-4b28-b1bf-729051ec9557" />
 
 
 
 🔸 Finishers
-![image](https://github.com/user-attachments/assets/391303b4-c372-4457-92f4-5e82b6e2527e)
-
+<img width="635" alt="image" src="https://github.com/user-attachments/assets/df55da0d-c868-4559-86cf-d712bbe52020" />
 
 
 🔸 All Rounders
-![image](https://github.com/user-attachments/assets/6e4423f2-bb45-479c-9592-57cf40b589a7)
+<img width="622" alt="image" src="https://github.com/user-attachments/assets/49345e32-ffd2-4d6d-bdd0-a073a0e610e0" />
 
 
 
 🔸 Final Best 11
-![image](https://github.com/user-attachments/assets/1aa1fce7-8e90-489c-96e2-de55b092f607)
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/775720f0-925d-4b6d-9954-20574fffec8d" />
 
 
 🛠 Tools and Libraries Used
