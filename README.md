@@ -128,7 +128,7 @@ Final player selection logic built into UX
 ## 📷 Report Screenshots
 
 ### 🔸 Openers
-![Openers](./openers.png)
+<img width="608" alt="openers" src="https://github.com/user-attachments/assets/6868aac2-f53a-446c-8de2-5cd7c962b306" />
 
 ### 🔸 Middle Order
 ![Middle Order](./middle%20order.png)
